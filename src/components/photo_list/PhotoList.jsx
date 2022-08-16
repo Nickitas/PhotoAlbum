@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import CardItem from './cardItem/CardItem'
 import classes from './photo_list.module.scss'
 
 
@@ -18,21 +19,11 @@ const PhotoList = ({setId}) => {
             <div className='container'>
                 <div className={classes.wrapper}>
                     {
-                        data.map((item, key) => { return (
-                            <div key={key} className={classes.card} onClick={() => {
-                                setId(item.id)
-                            }}>
-                                <div className={classes.picture}>
-                                    <div className={classes.img} style={{
-                                        background: `url(${item.url}) no-repeat center`,
-                                        backgroundSize:'cover'}}>
-                                    </div>
-                                </div>
-                                <div className={classes.details}>
-                                    <p>id: {item.id}</p>
-                                </div>
-                            </div>
-                        )})
+                        data.map((item, key) => <CardItem 
+                                                    key={key} 
+                                                    id={item.id} 
+                                                    url={item.url} 
+                                                    setId={setId} />)
                     }
                 </div>
             </div>

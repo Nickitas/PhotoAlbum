@@ -1,0 +1,35 @@
+.Card {
+    display: flex;
+    flex-direction: column;
+    height: 244px;
+}
+
+.picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: all .4s ease-in-out;
+    }
+}
+
+.Card:hover {
+    cursor: pointer;
+    .picture .img {
+        transform: scale(1.1);
+    }
+}
+
+.details {
+    margin-top: 8px;
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
